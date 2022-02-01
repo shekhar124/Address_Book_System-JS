@@ -119,7 +119,7 @@ contactArray.forEach((contact) => console.log(contact.toString()));
 //uc5
 console.log("Search a name and deleting that record");
 let index1 = contactArray.findIndex(contact => contact.firstName == "Ramu");
-contactArray.splice(index, 1);
+contactArray.splice(index1, 2);
 console.log("\nContact deleted Sucessfully");
 
 contactArray.forEach((contact) => console.log(contact.toString()));
