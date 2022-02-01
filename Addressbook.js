@@ -102,6 +102,8 @@ class AddressBook {
 let contactArray = new Array();
 let contactArray1 = new Array();
 contactArray.push(new AddressBook("Raja","Shekhar","Kodimial","Kariminagar","Telangana","505501","91 9573359776","shekharchinna@gmail.com"));
+contactArray.push(new AddressBook("Ramu","Babu","Kodimial","Kariminagar","Telangana","505501","91 9032144789","rambabu@gmail.com"));
+
 console.log(contactArray);
 contactArray.forEach((contact)=>console.log(contact.toString()));
 
@@ -114,4 +116,10 @@ contactArray[index].state="Andrapradesh";
 contactArray[index].city="Chittor";
 console.log("\nContacts after being updated");
 contactArray.forEach((contact) => console.log(contact.toString()));
+//uc5
+console.log("Search a name and deleting that record");
+let index1 = contactArray.findIndex(contact => contact.firstName == "Ramu");
+contactArray.splice(index, 1);
+console.log("\nContact deleted Sucessfully");
 
+contactArray.forEach((contact) => console.log(contact.toString()));
