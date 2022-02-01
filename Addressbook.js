@@ -98,3 +98,8 @@ class AddressBook {
                 "\nEmail: " + this.email;
     }
 }
+
+let contactArray = new Array();
+contactArray.push(new AddressBook("Raja","Shekhar","Kodimial","Kariminagar","Telangana","505501","91 9573359776","shekharchinna@gmail.com"));
+console.log(contactArray);
+contactArray.forEach((contact)=>console.log(contact.toString()));
