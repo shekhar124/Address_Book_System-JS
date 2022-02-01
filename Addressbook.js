@@ -1,4 +1,4 @@
-//uc2
+
 class AddressBook {
     constructor(...args) {
         this.firstName = args[0];
@@ -100,6 +100,18 @@ class AddressBook {
 }
 
 let contactArray = new Array();
+let contactArray1 = new Array();
 contactArray.push(new AddressBook("Raja","Shekhar","Kodimial","Kariminagar","Telangana","505501","91 9573359776","shekharchinna@gmail.com"));
 console.log(contactArray);
 contactArray.forEach((contact)=>console.log(contact.toString()));
+
+//uc4
+console.log("\nSearching a Firstname and updating that record");
+let index = contactArray.findIndex(contact => contact.firstName == "Raja");
+console.log("\nIndex of Searched name : " + index);
+contactArray[index].zip = "505500";
+contactArray[index].state="Andrapradesh";
+contactArray[index].city="Chittor";
+console.log("\nContacts after being updated");
+contactArray.forEach((contact) => console.log(contact.toString()));
+
