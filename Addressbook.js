@@ -152,6 +152,35 @@ contactArray.forEach((contact) => CheckForDuplicates(contact));
         console.log("No duplicate are founded with your entred name");
     else
         console.log("Duplicate are founded  name provided");
-}catch (e) {
+
+        
+        console.log("\nContact by Person's city name");
+        var numberOfCity = 0;
+        var numberOfState = 0;
+    
+        function ContactByCity(contactDetails) {
+            if (contactDetails.city == "Kariminagar") {
+                console.log(contactDetails.toString());
+                numberOfCity++;
+            }
+        }
+        contactArray.filter(ContactByCity);
+        console.log("\ncontacts by city " + numberOfCity);
+    
+        console.log("\nContact by person's state name");
+    
+        function ContactByState(contactDetails) {
+            if (contactDetails.state == "Telang") {
+                console.log(contactDetails.toString());
+                numberOfState++;
+            }
+        }
+        contactArray.filter(ContactByState);
+        console.log("\ncontacts by state is : " + numberOfState);}
+catch (e) {
     console.log(e);
 }
+    
+
+
+
