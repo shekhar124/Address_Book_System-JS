@@ -105,7 +105,7 @@ let contactArray = new Array();
 contactArray.push(new AddressBook("Raja","Shekhar","Kodimial","Kariminagar","Telangana","505501","91 9573359776","shekharchinna@gmail.com"));
 contactArray.push(new AddressBook("Ramu","Babu","Kodimial","Kariminagar","Telangana","505501","91 9032144789","rambabu@gmail.com"));
 contactArray.push(new AddressBook("Sunny","Daripelly","Kodimial","Kariminagar","Telangana","505501","91 9087656765","rambabu@gmail.com"));
-contactArray.push(new AddressBook("Raju","Alla","Ramakistapur","jagityal","hyderabad","505900","91 8790805004","rajualla@gmail.com"));
+contactArray.push(new AddressBook("Sunny","Alla","Ramakistapur","jagityal","hyderabad","505900","91 8790805004","rajualla@gmail.com"));
 
 console.log(contactArray);
 contactArray.forEach((contact)=>console.log(contact.toString()));
@@ -137,7 +137,21 @@ function FindTotalContacts(contactArray) {
     return totalContacts;
 }
 contactArray.reduce(FindTotalContacts, 1);
+
 console.log("Total number of contacts are  : " + totalContacts);
+console.log("\n checking duplicates in AB \n");
+let countForDuplicate = 0;
+
+function CheckForDuplicates(contact) {
+    if (contact.firstName == "Sunny")
+        countForDuplicate++;
+    return countForDuplicate;
+}
+contactArray.forEach((contact) => CheckForDuplicates(contact));
+    if (countForDuplicate == 1)
+        console.log("No duplicate are founded with your entred name");
+    else
+        console.log("Duplicate are founded  name provided");
 }catch (e) {
     console.log(e);
 }
