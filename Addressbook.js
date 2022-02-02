@@ -103,7 +103,7 @@ class AddressBook {
 let contactArray = new Array();
 
 contactArray.push(new AddressBook("Raja","Shekhar","Kodimial","Kariminagar","Telangana","505501","91 9573359776","shekharchinna@gmail.com"));
-contactArray.push(new AddressBook("Ramu","Babu","Kodimial","Kariminagar","Telangana","505501","91 9032144789","rambabu@gmail.com"));
+contactArray.push(new AddressBook("Aamu","Babu","Kodimial","Kariminagar","Telangana","505501","91 9032144789","rambabu@gmail.com"));
 contactArray.push(new AddressBook("Sunny","Daripelly","Kodimial","Kariminagar","Telangana","505501","91 9087656765","rambabu@gmail.com"));
 contactArray.push(new AddressBook("Sunny","Alla","Ramakistapur","jagityal","hyderabad","505900","91 8790805004","rajualla@gmail.com"));
 
@@ -194,10 +194,16 @@ contactArray.forEach((contact) => CheckForDuplicates(contact));
     }
     let addressStateMap = contactArray.map(StateMap);
     console.log(addressStateMap);
+    function SortByName() {
+        for (let contactDetails in contactArray) {
+            contactArray.sort(contactDetails.firstName);
+        }
+        contactArray.forEach((contact) => console.log(contact.toString()));
     }
-
-        
-catch (e) {
+    console.log("Sorting by firstName");
+    SortByName();
+    }
+     catch (e) {
     console.log(e);
 }
     
