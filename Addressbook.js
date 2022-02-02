@@ -176,7 +176,27 @@ contactArray.forEach((contact) => CheckForDuplicates(contact));
             }
         }
         contactArray.filter(ContactByState);
-        console.log("\ncontacts by state is : " + numberOfState);}
+        console.log("\ncontacts by state is : " + numberOfState);
+
+        //by city
+    console.log("\n view person by city");
+    function CityMap(contact) {
+        return contact.city + " -> " + contact.firstName + "" + contact.lastName;
+    }
+    let addressCityMap = contactArray.map(CityMap);
+    console.log(addressCityMap);
+
+    //by state
+    console.log("\nview person by state");
+
+    function StateMap(contactDetails) {
+        return contactDetails.state + " -> " + contactDetails.firstName + "  " + contactDetails.lastName;
+    }
+    let addressStateMap = contactArray.map(StateMap);
+    console.log(addressStateMap);
+    }
+
+        
 catch (e) {
     console.log(e);
 }
