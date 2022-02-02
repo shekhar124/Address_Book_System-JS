@@ -1,4 +1,5 @@
-
+//uc1,2,3
+console.log("WELL COME TO ADDRESS BOOK JAVASCRIPT");
 class AddressBook {
     constructor(...args) {
         this.firstName = args[0];
@@ -100,9 +101,11 @@ class AddressBook {
 }
 
 let contactArray = new Array();
-let contactArray1 = new Array();
+
 contactArray.push(new AddressBook("Raja","Shekhar","Kodimial","Kariminagar","Telangana","505501","91 9573359776","shekharchinna@gmail.com"));
 contactArray.push(new AddressBook("Ramu","Babu","Kodimial","Kariminagar","Telangana","505501","91 9032144789","rambabu@gmail.com"));
+contactArray.push(new AddressBook("Sunny","Daripelly","Kodimial","Kariminagar","Telangana","505501","91 9087656765","rambabu@gmail.com"));
+contactArray.push(new AddressBook("Raju","Alla","Ramakistapur","jagityal","hyderabad","505900","91 8790805004","rajualla@gmail.com"));
 
 console.log(contactArray);
 contactArray.forEach((contact)=>console.log(contact.toString()));
@@ -112,14 +115,29 @@ console.log("\nSearching a Firstname and updating that record");
 let index = contactArray.findIndex(contact => contact.firstName == "Raja");
 console.log("\nIndex of Searched name : " + index);
 contactArray[index].zip = "505500";
-contactArray[index].state="Andrapradesh";
-contactArray[index].city="Chittor";
+ contactArray[index].state="Andrapradesh";
+ contactArray[index].city="Chittor";
 console.log("\nContacts after being updated");
 contactArray.forEach((contact) => console.log(contact.toString()));
 //uc5
+try{
 console.log("Search a name and deleting that record");
-let index1 = contactArray.findIndex(contact => contact.firstName == "Ramu");
-contactArray.splice(index1, 2);
+let index1 = contactArray.findIndex(contact => contact.firstName == "Raja");
+contactArray.splice(index1, 1);
 console.log("\nContact deleted Sucessfully");
-
 contactArray.forEach((contact) => console.log(contact.toString()));
+
+//uc6
+console.log("\nChecking total number of contacts in AddressBook After deleating the contact");
+var totalContacts = 0;
+
+function FindTotalContacts(contactArray) {
+    if (contactArray != null)
+        totalContacts++;
+    return totalContacts;
+}
+contactArray.reduce(FindTotalContacts, 1);
+console.log("Total number of contacts are  : " + totalContacts);
+}catch (e) {
+    console.log(e);
+}
